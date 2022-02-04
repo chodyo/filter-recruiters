@@ -21,7 +21,7 @@ If you're getting emails from a single sender or domain, just use the built-in g
 
 ## Prerequisites
 
-Any gmail label containing emails you want filtered. Defaults to running against the `Recruiters` label.
+Any gmail label containing emails where you would want followup emails filtered. Defaults to running against the `Recruiters` label.
 
 ## A note about permissions
 
