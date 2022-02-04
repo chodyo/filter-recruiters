@@ -4,7 +4,12 @@ Archives any email sent to me in gmail from an address previously identified as 
 
 ## Details
 
-Gets a list of N most recent sender email addresses in a gmail label. Scans the inbox for any new emails from the same senders, then applies the label, marks it as read, and archives it. Logs the sender and subject of any email the script archived.
+- Gets a list of N most recent sender email addresses in a gmail label
+- Scans the inbox for any new emails from the same senders, then 
+  - applies the label to the email
+  - marks it as read
+  - archives it 
+- Logs the sender and subject of any email the script archived
 
 ## Prerequisites
 
@@ -16,10 +21,10 @@ I wrote the code, but when you copy paste the code into google scripts, you take
 
 ## First time setup
 
-1. Go to <script.google.com>
+1. Go to <https://script.google.com>
 2. Click "New Project"
 3. Copy the contents of this repo's [Code.gs](https://raw.githubusercontent.com/chodyo/filter-recruiters/main/main.gs) into your new project's "Code.gs" file
-  - If you have a custom label, edit the `const labelName = "Recruiters";` line to contain the name of your label
+    - If you have a custom label, edit the `const labelName = "Recruiters";` line to contain the name of your label
 5. Rename your project to something descriptive, e.g. `Filter Recruiters`
 6. Make sure `archiveRecruiters` is the selected function to run
 7. Save your changes with `ctrl+s` or `cmd+s`
@@ -39,11 +44,11 @@ After following the first time setup above, you can run the script on a timer.
 1. Click "Triggers" on the far left of the project dashboard (button with the alarm clock icon)
 2. Click "Add Trigger"
 3. Fill out the form as follows:
-  - Function: `archiveRecruiters`
-  - Deployment: `Head`
-  - Event source: `Time-driven`
-  - Type: I use `Hour timer`
-  - Interval: `Every hour`
-  - Failure notification settings: I recommend `Notify me immediately` so you can stop future execution if you encounter failures.
+    - Function: `archiveRecruiters`
+    - Deployment: `Head`
+    - Event source: `Time-driven`
+    - Type: I use `Hour timer`
+    - Interval: `Every hour`
+    - Failure notification settings: I recommend `Notify me immediately` so you can stop future execution if you encounter failures.
 
 You can run it more frequently if you want but because the script doesn't yet cache recruiter email addresses, I recommend not running it more frequently than once an hour
