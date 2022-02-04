@@ -1,14 +1,17 @@
 /*
-  Guide: https://www.jessespevack.com/2018-09-06-how-to-create-a-gmail-filter-with-google-apps-script/
+  Source: https://github.com/chodyo/filter-recruiters
+
+  Inspiration: https://www.jessespevack.com/2018-09-06-how-to-create-a-gmail-filter-with-google-apps-script/
   
-  This function is meant to run on a time-based trigger (I have it set for every 10 minutes).
+  This function is meant to run on a time-based trigger (I have it set for every hour).
   
-  When run, the function will get some of the most recent emails in my inbox under the "Recruiters" tag
+  When run, the function will get some of the most recent email addresses under the "Recruiters" tag
   
   The filter will automatically mark all emails as read and make sure all threads have the Recruiter
   tag before archiving it.
 
-  The script will apply the same actions (mark as read, and archive) to the emails.
+  The script will apply the same actions (mark as read, and archive) to the emails in addition to logging 
+  the addresses and subjects of archived emails.
   
   For this function to run correctly you must enable the Advanced Gmail Service
   see: https://developers.google.com/apps-script/advanced/gmail
@@ -47,6 +50,8 @@ function archiveInboxAddressesToLabel(addresses, label) {
       thread.addLabel(label);
       thread.markRead();
       thread.moveToArchive();
-      console.log("archived email from", thread.getMessages()[0].getFrom());
+
+      const message = thread.getMessages()[0];
+      console.log("archived email", message.getFrom(), message.getSubject());
     })
 }
