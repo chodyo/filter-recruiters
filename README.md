@@ -2,6 +2,14 @@
 
 Archives any email sent to me in gmail from an address previously identified as a recruiter
 
+## Use case
+
+Use this when you're getting a variety of emails from a variety of senders that you don't exactly want to mark as spam or delete, but that don't need your attention. 
+
+Job recruiters are difficult to create basic filters for because they aren't coming from any pattern of addresses, nor do they all use the same key words in their subject or bodies.
+
+If you're getting emails from a single sender or domain, just use the built-in gmail filters instead.
+
 ## Details
 
 - Gets a list of N most recent sender email addresses in a gmail label
